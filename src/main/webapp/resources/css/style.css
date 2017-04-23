@@ -1,0 +1,297 @@
+.navbar-default{
+    padding-left: 150px;
+}
+.navbar-header a{
+    font-size: 35px;
+    font-family: 'Sigmar One', cursive;
+}
+.navbar-default form{
+    padding-left: 50px;
+}
+.navbar-default ul{
+    margin-right: 200px;
+}
+body{
+    background-color: #e8e8e8;
+}
+.container{
+    width: auto;
+}
+.commodity{
+    background-color: white;
+    height: 390px;
+    width: 340px;
+    margin: 30px 30px 20px 30px;
+    border: 1px;
+    border-radius: 15px;
+    float: left;
+}
+.commodity h2{
+    color: grey;
+}
+.commodity img{
+    margin: 0 45px 0 45px;
+    width: 250px;
+    height: 220px;
+    background-size: 100% 100%;
+    border: white solid 1px;
+    border-radius: 15px;
+
+}
+.commodity .description{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    color: grey;
+}
+.button1{
+    text-align: center;
+}
+.commodity button{
+    margin: auto;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border: white solid 1px;
+    border-radius: 10px;
+}
+.commodity .b1{
+    width: 90px;
+    background-color: #beb716;
+}
+.commodity .b2{
+    width: 90px;
+    background-color: firebrick;
+}
+.commodity .b3{
+    width: 130px;
+    background-color: forestgreen;
+}
+.commodity .b4{
+    width: 130px;
+    color: grey;
+    background-color: lightgray;
+}
+.commodity h2{
+    text-align: center;
+}
+.commodity .price{
+    text-align: center;
+    font-size: 17px;
+    color: forestgreen;
+}
+.registration{
+    margin: auto;
+    margin-top: 80px;
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    border: black solid 1px;
+    border-radius: 15px;
+    padding: 45px;
+}
+.registration .input-group{
+    margin-top: 15px;
+    margin-left: 20px;
+    width: 430px;
+    float: left;
+}
+.registration button{
+    margin-top: 20px;
+    margin-left: 400px;
+    background-color: darkgray;
+
+    height: 30px;
+    width: 100px;
+    border: white solid 1px;
+    border-radius: 15px;
+    color: white;
+}
+.registration h1, .loginContainer h1{
+    text-align: center;
+    color: grey;
+    font-family: 'Sigmar One', cursive;
+}
+.loginContainer{
+    margin: auto;
+    margin-top: 80px;
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    padding: 20px;
+    border: white solid 1px;
+    border-radius: 25px;
+}
+.loginContainer .input-group{
+    margin-top: 35px;
+}
+
+
+.btn-primary{
+    margin-left: 140px;
+    margin-top: 20px;
+    width: 200px;
+}
+.category{
+    text-align: center;
+    height: 100px;
+    padding: 10px 30px 5px 30px;
+}
+.category1{
+    margin-left: 15px;
+    text-align: center;
+    height: 60px;
+    width: 200px;
+    padding: 13px;
+    font-size: 22px;
+    background-color: lightgray;
+    color: white;
+    border: white solid 2px;
+    border-radius: 15px;
+    display: inline-block;
+}
+.addCategoryContainer{
+    margin: auto;
+    margin-top: 80px;
+    width: 550px;
+    height: 250px;
+    background-color: white;
+    text-align: center;
+    border: white solid 1px;
+    border-radius: 25px;
+    padding-top: 30px;
+}
+.addCategoryContainer label{
+    font-size: 18px;
+    color: grey;
+}
+.addCategoryContainer h1{
+    color: grey;
+    font-family: 'Sigmar One', cursive;
+    text-align: center;
+}
+.addCategoryContainer .btn-primary{
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 200px;
+}
+.addCommodityContainer{
+    margin: auto;
+    margin-top: 80px;
+    width: 600px;
+    height: 750px;
+    background-color: white;
+    border: white solid 1px;
+    border-radius: 25px;
+    padding-top: 30px;
+}
+.addCommodityContainer form{
+    margin: auto;
+    width: 300px;
+}
+.addCommodityContainer h1{
+    color: grey;
+    font-family: 'Sigmar One', cursive;
+    text-align: center;
+}
+.addCommodityContainer label{
+    font-size: 18px;
+    color: grey;
+}
+.addCommodityContainer input{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.addCommodityContainer .btn-primary{
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.basket{
+    margin: auto;
+    width: 900px;
+}
+.basketC{
+    margin-bottom: 30px;
+    height: 200px;
+    border: white solid 1px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 15px;
+}
+.imgC{
+    height: 170px;
+    width: 170px;
+    border: black solid 1px;
+    border-radius: 10px;
+    margin-left: 20px;
+    float: left;
+}
+.imgC img{
+    background-size: 100% 100%;
+    height: 170px;
+    width: 170px;
+    border: black solid 1px;
+    border-radius: 10px;
+
+}
+
+.infoCom{
+    text-align: center;
+    margin-left: 50px;
+    width: 500px;
+    float: left;
+}
+.description{
+    text-align: left;
+    height: 100px;
+    overflow: scroll;
+}
+.deleteBask a{
+    float: left;
+    width: 100px;
+    margin-top: 80px;
+    margin-left: 5px;
+    color: firebrick;
+    font-size: 20px;
+    text-align: left;
+}
+.sum{
+    text-align: right;
+    font-size: 19px;
+    color: forestgreen;
+}
+.buy{
+    margin: auto;
+    text-align: center;
+}
+.buy button{
+    height: 60px;
+    width: 320px;
+    background-color: forestgreen;
+    color: white;
+    font-size: 20px;
+    border: white solid 1px;
+    border-radius: 15px;
+}
+
+#fof{display:block; width:100%; line-height:1.6em; text-align:center;}
+#fof h1{font-size:80px; text-transform:uppercase;}
+#fof img{margin-bottom:25px;}
+#fof p{display:block; margin:0 0 25px 0; padding:0; font-size:16px;}
+#fof #respond input{width:200px; padding:5px; border:1px solid #CCCCCC;}
+#fof #respond #submit{width:auto;}
+
+.acceptPurchaseContainer{
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: white;
+    border: white solid 1px;
+    border-radius: 15px;
+    font-family: 'Hammersmith One', sans-serif;
+}
+.acceptPurchaseContainer p{
+    font-size: 25px;
+}
