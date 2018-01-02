@@ -22,7 +22,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Sombra Shop</a>
+            <a class="navbar-brand" href="/">Simple Shop</a>
         </div>
 
         <form action="/searchCommodity" method="post" class="navbar-form navbar-left">

@@ -22,7 +22,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Sombra Shop</a>
+            <a class="navbar-brand" href="/">Simple Shop</a>
         </div>
 
         <form action="/searchCommodity" method="post" class="navbar-form navbar-left">
@@ -66,7 +66,7 @@
     <div class="container2">
         <div class="nameInfo"><h2>${commodity.brand} ${commodity.name}</h2>
             <h3>Price: ${commodity.price} $</h3>
-            <h3>Category: ${commodity.category.name}</h3>
+            <h3>Category: ${commodity.categoryId.name}</h3>
         </div><hr>
         <div class="description">
 

@@ -1,6 +1,7 @@
 <%@ taglib prefix="com" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="category" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Apple
@@ -24,7 +25,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Sombra Shop</a>
+            <a class="navbar-brand" href="/">Simple Shop</a>
         </div>
 
         <form action="/searchCommodity" method="post" class="navbar-form navbar-left">
@@ -50,7 +51,16 @@
 <div class="category">
     <category:forEach var="category" items="${categories}">
         <a href="/commodityCategory/${category.id}">
-            <div class="category1">${category.name}</div>
+            <c:set var = "categoryId" scope = "session" value = "${selectedcategory}"/>
+            <c:choose>
+                <c:when test = "${categoryId==category.id}">
+                    <div class="category1" style="background-color: #e8e8e8">${category.name}</div>
+                </c:when>
+                <c:otherwise>
+                    <div class="category1">${category.name}</div>
+                </c:otherwise>
+            </c:choose>
+
         </a>
     </category:forEach>
 </div>
@@ -66,6 +76,8 @@
                     <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/commodity/edit/${com.id}"><button class="b1"><span class="glyphicon glyphicon-edit"></span>edit</button></a></sec:authorize>
                     <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/deleteCommodity/${com.id}">  <button class="b2"><span class="glyphicon glyphicon-trash"></span>delete</button></a></sec:authorize>
                     <sec:authorize access="hasRole('ROLE_USER')"><a href="/addToBasket/${com.id}"><button class="b3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button></a></sec:authorize>
+                    <sec:authorize access="isAnonymous()"><a href="/loginpage"><button class="b4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button></a></sec:authorize>
+
                 </div>
             </div>
         </a>

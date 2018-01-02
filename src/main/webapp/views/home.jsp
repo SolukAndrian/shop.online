@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Sombra shop</title>
+    <title>Simple Shop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,7 +24,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Sombra Shop</a>
+            <a class="navbar-brand" href="/">Simple Shop</a>
         </div>
 
         <form action="/searchCommodity" method="post" class="navbar-form navbar-left">
@@ -36,12 +36,25 @@
             </button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-            <sec:authorize access="hasRole('ROLE_ADMIN')"> <li><a href="/commodityAdd"><span class="glyphicon glyphicon-plus"></span> Add commodity</a></li></sec:authorize>
-            <sec:authorize access="hasRole('ROLE_ADMIN')"><li><a href="/categoryAdd"><span class="glyphicon glyphicon-plus"></span> Add category</a></li></sec:authorize>
-            <sec:authorize access="hasRole('ROLE_USER')"><li><a href="/userBasket"><span class="glyphicon glyphicon-shopping-cart"></span> Basket</a></li></sec:authorize>
-            <sec:authorize access="isAuthenticated()"><li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li></sec:authorize>
-            <sec:authorize access="isAnonymous()"><li><a href="/loginpage"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li></sec:authorize>
-            <sec:authorize access="isAnonymous()"><li><a href="/registrationPage"><span class="glyphicon glyphicon-list-alt"></span> Registration page</a></li></sec:authorize>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <li><a href="/commodityAdd"><span class="glyphicon glyphicon-plus"></span> Add commodity</a></li>
+            </sec:authorize>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <li><a href="/categoryAdd"><span class="glyphicon glyphicon-plus"></span> Add category</a></li>
+            </sec:authorize>
+            <sec:authorize access="hasRole('ROLE_USER')">
+                <li><a href="/userBasket"><span class="glyphicon glyphicon-shopping-cart"></span> Basket</a></li>
+            </sec:authorize>
+            <sec:authorize access="isAuthenticated()">
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+            </sec:authorize>
+            <sec:authorize access="isAnonymous()">
+                <li><a href="/loginpage"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+            </sec:authorize>
+            <sec:authorize access="isAnonymous()">
+                <li><a href="/registrationPage"><span class="glyphicon glyphicon-list-alt"></span> Registration page</a>
+                </li>
+            </sec:authorize>
 
         </ul>
 
@@ -51,7 +64,9 @@
     <category:forEach var="category" items="${categories}">
         <a href="/commodityCategory/${category.id}">
 
-        <div class="category1">${category.name} <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/deleteCategory/${category.id}"> <span class="glyphicon glyphicon-remove"></span></a></sec:authorize></div>
+            <div class="category1">${category.name} <sec:authorize access="hasRole('ROLE_ADMIN')"><a
+                    href="/deleteCategory/${category.id}"> <span
+                    class="glyphicon glyphicon-remove"></span></a></sec:authorize></div>
         </a>
     </category:forEach>
 </div>
@@ -64,10 +79,18 @@
                 <div class="price">${com.price}$</div>
                 <div class="description">${com.description}</div>
                 <div class="button1">
-                    <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/commodity/edit/${com.id}"><button class="b1"><span class="glyphicon glyphicon-edit"></span>edit</button></a></sec:authorize>
-                    <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/deleteCommodity/${com.id}">  <button class="b2"><span class="glyphicon glyphicon-trash"></span>delete</button></a></sec:authorize>
-                    <sec:authorize access="hasRole('ROLE_USER')"><a href="/addToBasket/${com.id}"><button class="b3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button></a></sec:authorize>
-                    <sec:authorize access="isAnonymous()"><a href="/loginpage"><button class="b4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button></a></sec:authorize>
+                    <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/commodity/edit/${com.id}">
+                        <button class="b1"><span class="glyphicon glyphicon-edit"></span>edit</button>
+                    </a></sec:authorize>
+                    <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/deleteCommodity/${com.id}">
+                        <button class="b2"><span class="glyphicon glyphicon-trash"></span>delete</button>
+                    </a></sec:authorize>
+                    <sec:authorize access="hasRole('ROLE_USER')"><a href="/addToBasket/${com.id}">
+                        <button class="b3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button>
+                    </a></sec:authorize>
+                    <sec:authorize access="isAnonymous()"><a href="/loginpage">
+                        <button class="b4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button>
+                    </a></sec:authorize>
 
                 </div>
             </div>

@@ -4,16 +4,17 @@
        xmlns:security="http://www.springframework.org/schema/security"
        xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
         <property name="persistenceXmlLocation" value="classpath://META-INF/persistence.xml"/>
-        <property name="persistenceUnitName" value="sombra"/>
+        <property name="persistenceUnitName" value="shop"/>
     </bean>
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"></bean>
 
-    <bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
@@ -23,7 +24,7 @@
     </bean>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="3000000" />
+        <property name="maxUploadSize" value="3000000"/>
     </bean>
 
     <security:http>
@@ -51,6 +52,8 @@
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
 
     <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter"/>
+
+
     <mvc:annotation-driven>
         <mvc:message-converters>
             <ref bean="stringHttpMessageConverter"/>
@@ -59,6 +62,9 @@
     </mvc:annotation-driven>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
-    <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
-    <context:component-scan base-package="ua.lviv.sombra.*"/>
+
+    <context:component-scan base-package="ua.lviv.shop.*"/>
+    <jpa:repositories base-package="ua.lviv.shop.dao"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <mvc:annotation-driven/>
 </beans>

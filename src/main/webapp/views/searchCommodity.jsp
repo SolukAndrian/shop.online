@@ -24,7 +24,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Sombra Shop</a>
+            <a class="navbar-brand" href="/">Simple Shop</a>
         </div>
 
         <form action="/searchCommodity" method="post" class="navbar-form navbar-left">
@@ -64,6 +64,8 @@
                     <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/commodity/edit/${com.id}"><button class="b1"><span class="glyphicon glyphicon-edit"></span>edit</button></a></sec:authorize>
                     <sec:authorize access="hasRole('ROLE_ADMIN')"><a href="/deleteCommodity/${com.id}">  <button class="b2"><span class="glyphicon glyphicon-trash"></span>delete</button></a></sec:authorize>
                     <sec:authorize access="hasRole('ROLE_USER')"><a href="/addToBasket/${com.id}"><button class="b3"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button></a></sec:authorize>
+                    <sec:authorize access="isAnonymous()"><a href="/loginpage"><button class="b4"><span class="glyphicon glyphicon-shopping-cart"></span>Add to busket</button></a></sec:authorize>
+
                 </div>
             </div>
         </a>
