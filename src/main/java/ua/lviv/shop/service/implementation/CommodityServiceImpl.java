@@ -3,7 +3,7 @@ package ua.lviv.shop.service.implementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ua.lviv.shop.dao.CommodityRepository;
+import ua.lviv.shop.repository.CommodityRepository;
 import ua.lviv.shop.entity.Category;
 import ua.lviv.shop.entity.Commodity;
 import ua.lviv.shop.service.CategoryService;

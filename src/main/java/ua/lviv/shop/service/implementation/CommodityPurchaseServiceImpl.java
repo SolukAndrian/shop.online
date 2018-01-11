@@ -2,7 +2,7 @@ package ua.lviv.shop.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.lviv.shop.dao.CommodityPurchaseRepository;
+import ua.lviv.shop.repository.CommodityPurchaseRepository;
 import ua.lviv.shop.entity.CommodityPurchase;
 import ua.lviv.shop.service.CommodityPurchaseService;
 

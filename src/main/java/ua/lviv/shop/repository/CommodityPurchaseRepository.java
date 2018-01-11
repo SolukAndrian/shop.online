@@ -1,4 +1,4 @@
-package ua.lviv.shop.dao;
+package ua.lviv.shop.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ua.lviv.shop.entity.CommodityPurchase;

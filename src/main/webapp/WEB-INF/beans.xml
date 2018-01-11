@@ -64,7 +64,7 @@
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <context:component-scan base-package="ua.lviv.shop.*"/>
-    <jpa:repositories base-package="ua.lviv.shop.dao"/>
+    <jpa:repositories base-package="ua.lviv.shop.repository"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven/>
 </beans>

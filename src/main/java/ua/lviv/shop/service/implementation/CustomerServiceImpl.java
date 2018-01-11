@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ua.lviv.shop.dao.CustomerRepository;
+import ua.lviv.shop.repository.CustomerRepository;
 import ua.lviv.shop.entity.Customer;
 import ua.lviv.shop.service.CustomerService;
 

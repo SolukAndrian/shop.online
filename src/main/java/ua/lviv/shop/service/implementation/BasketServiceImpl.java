@@ -3,7 +3,7 @@ package ua.lviv.shop.service.implementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import ua.lviv.shop.dao.BasketRepository;
+import ua.lviv.shop.repository.BasketRepository;
 import ua.lviv.shop.entity.Basket;
 import ua.lviv.shop.entity.Commodity;
 import ua.lviv.shop.entity.Customer;

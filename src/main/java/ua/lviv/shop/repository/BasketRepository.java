@@ -1,4 +1,4 @@
-package ua.lviv.shop.dao;
+package ua.lviv.shop.repository;
 
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
