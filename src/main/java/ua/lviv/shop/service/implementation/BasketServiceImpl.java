@@ -12,7 +12,6 @@ import ua.lviv.shop.service.CommodityService;
 import ua.lviv.shop.service.CustomerService;
 
 import javax.transaction.Transactional;
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,8 +29,8 @@ public class BasketServiceImpl implements BasketService {
     @Autowired
     CommodityService commodityService;
 
-    public void add(Integer id, Principal principal) {
-        Customer customer = customerService.findByLogin(principal.getName());
+    public void add(Integer id, String login) {
+        Customer customer = customerService.findByLogin(login);
         Commodity commodity = commodityService.findById(id);
         Basket basket = new Basket(customer,commodity);
         basketRepository.save(basket);
@@ -63,8 +62,8 @@ public class BasketServiceImpl implements BasketService {
         return sum;
     }
 
-    public List<Commodity> getUserCommoditiesInBasket(Principal principal, Model model) {
-        Customer customer = customerService.findByLogin(principal.getName());
+    public List<Commodity> getUserCommoditiesInBasket(String login) {
+        Customer customer = customerService.findByLogin(login);
         List<Basket> basketList=basketsUser(customer.getId());
         List<Commodity> commodityList = new ArrayList<Commodity>();
         for(Basket basket : basketList){

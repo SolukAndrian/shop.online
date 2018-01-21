@@ -20,14 +20,14 @@ public class BasketController {
 
     @RequestMapping(value = "/addToBasket/{id}")
     public String addToBasket(@PathVariable Integer id, Principal principal) {
-        basketService.add(id, principal);
+        basketService.add(id, principal.getName());
         return "redirect:/";
     }
 
     @RequestMapping(value = "/userBasket")
     public String getUserBasket(Principal principal, Model model) {
-        model.addAttribute("commodities", basketService.getUserCommoditiesInBasket(principal, model));
-        model.addAttribute("SUM", basketService.calculateSum(basketService.getUserCommoditiesInBasket(principal, model)));
+        model.addAttribute("commodities", basketService.getUserCommoditiesInBasket(principal.getName()));
+        model.addAttribute("SUM", basketService.calculateSum(basketService.getUserCommoditiesInBasket(principal.getName())));
         return "commodityInBasket";
     }
 

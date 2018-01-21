@@ -13,7 +13,6 @@ import ua.lviv.shop.service.CustomerService;
 import ua.lviv.shop.service.PurchaseService;
 
 import javax.transaction.Transactional;
-import java.security.Principal;
 import java.util.Date;
 import java.util.List;
 
@@ -55,8 +54,8 @@ public class PurchaseServiceImpl implements PurchaseService {
         return purchaseRepository.findOne(id);
     }
 
-    public void buyAll(Principal principal) {
-        Customer customer = customerService.findByLogin(principal.getName());
+    public void buyAll(String login) {
+        Customer customer = customerService.findByLogin(login);
         List<Basket> basketList = basketService.basketsUser(customer.getId());
         CommodityPurchase commodityPurchase;
         double sum = 0;

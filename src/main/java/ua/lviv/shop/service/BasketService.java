@@ -8,12 +8,12 @@ import java.security.Principal;
 import java.util.List;
 
 public interface BasketService {
-    void add(Integer id, Principal principal);
+    void add(Integer id, String login);
     void delete(int id);
     Basket findById(int id);
     List<Basket> basketsUser(int id);
     List<Basket> findAll();
     Double calculateSum(List<Commodity> commodities);
-    List<Commodity> getUserCommoditiesInBasket(Principal principal, Model model);
+    List<Commodity> getUserCommoditiesInBasket(String login);
     void deleteCommodityFromBasket(int id);
 }

@@ -24,7 +24,7 @@ public class PurchaseController {
 
     @RequestMapping(value = "/buyAll")
     public String buyAll(Principal principal) {
-        purchaseService.buyAll(principal);
+        purchaseService.buyAll(principal.getName());
         return "redirect:/acceptPage";
     }
 }
